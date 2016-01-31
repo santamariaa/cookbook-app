@@ -1,0 +1,17 @@
+<h1> Cookbook</h1>
+
+<%= link_to "Add a new recipe", "/recipes/new" %>
+
+<div class="row">
+<% @recipes.each do |recipe| %>
+
+<div class="col-md-offset-1 col-md-3 col-sm-6 list-view">
+    <div class="thumbnail">
+    <h2><%=link_to recipe.title, "/recipes/#{recipe.id}"%></h2>
+    <h3><%= recipe.chef %></h3>
+    <h3><%= recipe.directions%></h3>
+    <%=image_tag recipe.image, class: "img-responsive" %>
+    </div>
+</div>
+       
+<% end %>
